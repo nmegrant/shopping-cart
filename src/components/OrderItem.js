@@ -62,7 +62,7 @@ export default function OrderItem(props) {
         <Button variant="light" onClick={handleIncreaseItem}>
           +
         </Button>
-        <p style={{ margin: "5px" }}> x {price.toFixed(2)}</p>
+        <p style={{ margin: "5px" }}> x €{price.toFixed(2)}</p>
       </div>
     </div>
   );

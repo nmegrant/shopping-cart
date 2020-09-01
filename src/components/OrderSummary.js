@@ -7,14 +7,8 @@ import Container from "react-bootstrap/Container";
 export default function OrderSummary() {
   const order = useSelector(selectOrder());
 
-  console.log(order);
-
-  //   const increaseOrder = () => {};
-
-  //   const decreaseOrder = () => {};
-
   return (
-    <Container>
+    <Container style={{ border: "solid grey", padding: "10px" }}>
       <h1>Order Summary</h1>
       {order.map((item) => (
         <OrderItem
@@ -24,8 +18,6 @@ export default function OrderSummary() {
           image={item.img}
           price={item.price}
           quantity={item.quantity}
-          //   increaseOrder={increaseOrder}
-          //   decreaseOrder={decreaseOrder}
         />
       ))}
     </Container>
