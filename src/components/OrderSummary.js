@@ -1,12 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import OrderItem from "./OrderItem";
 import { selectOrder } from "../store/order/selector";
 import Container from "react-bootstrap/Container";
 
 export default function OrderSummary() {
   const order = useSelector(selectOrder());
-  const dispatch = useDispatch();
 
   console.log(order);
 
