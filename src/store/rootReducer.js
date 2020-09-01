@@ -1,4 +1,4 @@
 import { combineReducers } from "redux";
-// import expample from "./example/reducer";
+import order from "./order/reducer";
 
-export default combineReducers({});
+export default combineReducers({ order });
