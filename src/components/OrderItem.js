@@ -27,7 +27,7 @@ export default function OrderItem(props) {
   };
 
   return (
-    <div>
+    <div style={{ margin: "10px" }}>
       <div
         style={{
           display: "flex",
