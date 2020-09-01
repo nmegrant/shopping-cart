@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import { Col } from "react-bootstrap";
 
 let count = 0;
+let count_dashes = 0;
 
 export default function PaymentDetails() {
   const [name, setName] = useState("");
@@ -22,7 +23,7 @@ export default function PaymentDetails() {
       alert("Please supply all information");
     } else {
       //Blah ugly alert but better than nothing for now
-      alert(`Order submitted for ${name}!`);
+      alert(`${name}'s order ready for review!`);
       setName("");
       setCardNumber("");
       setCvc("");
@@ -38,9 +39,10 @@ export default function PaymentDetails() {
       alert("Only numbers are valid");
     }
     if (/[0-9]/.test(event.target.value)) {
-      if (count === 3) {
+      if (count === 3 && count_dashes !== 3) {
         setCardNumber(`${event.target.value}-`);
         count = 0;
+        count_dashes = count_dashes + 1;
       } else {
         setCardNumber(event.target.value);
         count = count + 1;
@@ -112,7 +114,6 @@ export default function PaymentDetails() {
             maxLength="5"
           />
         </Form.Group>
-
         <Form.Group controlId="formBasicCVC">
           <Form.Label>CVC</Form.Label>
           <Form.Control
@@ -122,7 +123,6 @@ export default function PaymentDetails() {
             onChange={handleCvc}
           />
         </Form.Group>
-
         <Button variant="primary" type="submit" onClick={handleSubmit}>
           Review Order
         </Button>
