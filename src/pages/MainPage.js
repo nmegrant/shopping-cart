@@ -9,15 +9,15 @@ import { Col } from "react-bootstrap";
 
 export default function MainPage() {
   return (
-    <div style={{ display: "flex" }}>
-      <Container as={Col} md={{ span: 6, offset: 1 }} className="mt-5">
+    <Container style={{ display: "flex" }}>
+      <Container as={Col} md={{ span: 6, offset: 0 }} className="mt-5">
         <PaymentDetails />
       </Container>
-      <Container as={Col} md={{ span: 3, offset: 1 }} className="mt-5">
+      <Container as={Col} md={{ span: 4, offset: 1 }} className="mt-5">
         <OrderSummary />
         <GiftCardCode />
         <CalculateTotal />
       </Container>
-    </div>
+    </Container>
   );
 }

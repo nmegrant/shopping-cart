@@ -81,52 +81,54 @@ export default function PaymentDetails() {
   };
 
   return (
-    <Container as={Col} md={{ span: 6 }} className="mt-5">
+    <Container>
       <h1>Payment Details</h1>
-      <Form>
-        <Form.Group controlId="formBasicName">
-          <Form.Label>Name on Card</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder="Enter name on card"
-            value={name}
-            onChange={(event) => {
-              setName(event.target.value);
-            }}
-          />
-        </Form.Group>
-        <Form.Group controlId="formBasicCardNumber">
-          <Form.Label>Card number</Form.Label>
-          <Form.Control
-            type="text"
-            maxLength="19"
-            placeholder="xxxx xxxx xxxx xxxx"
-            value={cardNumber}
-            onChange={handleCardNumber}
-          />
-        </Form.Group>
-        <Form.Group controlId="formBasicExpiration">
-          <Form.Label>Expiration</Form.Label>
-          <Form.Control
-            type="text"
-            value={expiryDate}
-            onChange={handleExpiration}
-            maxLength="5"
-          />
-        </Form.Group>
-        <Form.Group controlId="formBasicCVC">
-          <Form.Label>CVC</Form.Label>
-          <Form.Control
-            type="text"
-            value={cvc}
-            maxLength="3"
-            onChange={handleCvc}
-          />
-        </Form.Group>
-        <Button variant="primary" type="submit" onClick={handleSubmit}>
-          Review Order
-        </Button>
-      </Form>
+      <Container as={Col} md={{ span: 6 }} className="mt-5">
+        <Form>
+          <Form.Group controlId="formBasicName">
+            <Form.Label>Name on Card</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter name on card"
+              value={name}
+              onChange={(event) => {
+                setName(event.target.value);
+              }}
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicCardNumber">
+            <Form.Label>Card number</Form.Label>
+            <Form.Control
+              type="text"
+              maxLength="19"
+              placeholder="xxxx xxxx xxxx xxxx"
+              value={cardNumber}
+              onChange={handleCardNumber}
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicExpiration">
+            <Form.Label>Expiration</Form.Label>
+            <Form.Control
+              type="text"
+              value={expiryDate}
+              onChange={handleExpiration}
+              maxLength="5"
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicCVC">
+            <Form.Label>CVC</Form.Label>
+            <Form.Control
+              type="text"
+              value={cvc}
+              maxLength="3"
+              onChange={handleCvc}
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit" onClick={handleSubmit}>
+            Review Order
+          </Button>
+        </Form>
+      </Container>
     </Container>
   );
 }
