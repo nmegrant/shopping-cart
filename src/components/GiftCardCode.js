@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 export default function GiftCardCode() {
   const [code, setCode] = useState();
 
+  //wasn't sure if I should implement this or not. Didn't see it mentioned in the directions so I left it (also running out of time)
   const submitCode = (event) => {
     event.preventDefault();
     //Blah ugly alert but better than nothing for now

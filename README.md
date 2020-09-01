@@ -1,3 +1,13 @@
+## Some Thoughts
+
+#### Things I don't like
+
+Used kind of a hacky way to mimic a credit card payment system. Not perfect, but I didn't want to try to figure out a new library (I had considered it at first and install one) while under time pressure. Not perfect but an adequate mock up (I hope).
+
+Thing I'm least satisfied with: styling. Doesn't looking nearly as pretty as it should. This is definitely one of the areas I'm weakest and need to get better/faster in.
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

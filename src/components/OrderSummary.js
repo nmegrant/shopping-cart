@@ -8,7 +8,7 @@ export default function OrderSummary() {
   const order = useSelector(selectOrder());
 
   return (
-    <Container style={{ border: "solid grey", padding: "10px" }}>
+    <Container style={{ border: "solid grey", padding: "20px" }}>
       <h1>Order Summary</h1>
       {order.map((item) => (
         <OrderItem
