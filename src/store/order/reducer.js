@@ -19,11 +19,29 @@ const initialState = [
 
 export default function orderReducer(state = initialState, action) {
   switch (action.type) {
-    case "ADD_ITEM": {
-      return [...state];
+    case "INCREASE_ITEM_QUANTITY": {
+      const newState = [...state].map((item) => {
+        if (item.id === action.payload) {
+          return { ...item, quantity: item.quantity + 1 };
+        } else {
+          return { ...item };
+        }
+      });
+      return [...newState];
+    }
+    case "DECREASE_ITEM_QUANTITY": {
+      const newState = [...state].map((item) => {
+        if (item.id === action.payload && item.quantity !== 0) {
+          return { ...item, quantity: item.quantity - 1 };
+        } else {
+          return { ...item };
+        }
+      });
+      return [...newState];
     }
     case "REMOVE_ITEM": {
-      return [...state];
+      const newState = [...state].filter((item) => item.id !== action.payload);
+      return [...newState];
     }
     default:
       return state;

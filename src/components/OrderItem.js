@@ -1,10 +1,30 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import {
+  increaseOrderedItem,
+  decreaseOrderedItem,
+  removeOrderedItem,
+} from "../store/order/actions";
 import Button from "react-bootstrap/Button";
 
 export default function OrderItem(props) {
+  const { id, quantity, price, image, name } = props;
   const dispatch = useDispatch();
-  console.log(props.quantity);
+
+  const handleDecreaseItem = (event) => {
+    event.preventDefault();
+    dispatch(decreaseOrderedItem(id));
+  };
+
+  const handleIncreaseItem = (event) => {
+    event.preventDefault();
+    dispatch(increaseOrderedItem(id));
+  };
+
+  const handleRemoveItem = (event) => {
+    event.preventDefault();
+    dispatch(removeOrderedItem(id));
+  };
 
   return (
     <div>
@@ -14,8 +34,19 @@ export default function OrderItem(props) {
           justifyContent: "center",
         }}
       >
-        <img src={props.image} alt="product picture" width="25" height="50" />
-        <p style={{ paddingLeft: "10px" }}>{props.name}</p>
+        <img src={image} alt="product" width="25" height="50" />
+        <p style={{ paddingLeft: "10px" }}>{name}</p>
+        <Button
+          style={{
+            height: "30px",
+            backgroundColor: "white",
+            color: "grey",
+            border: "white",
+          }}
+          onClick={handleRemoveItem}
+        >
+          x
+        </Button>
       </div>
       <div
         style={{
@@ -24,10 +55,14 @@ export default function OrderItem(props) {
           alignItems: "center",
         }}
       >
-        <Button variant="light">-</Button>
-        <p style={{ margin: "5px" }}>{props.quantity}</p>
-        <Button variant="light">+</Button>
-        <p style={{ margin: "5px" }}>{props.price.toFixed(2)}</p>
+        <Button variant="light" onClick={handleDecreaseItem}>
+          -
+        </Button>
+        <p style={{ margin: "5px" }}>{quantity}</p>
+        <Button variant="light" onClick={handleIncreaseItem}>
+          +
+        </Button>
+        <p style={{ margin: "5px" }}> x €{price.toFixed(2)}</p>
       </div>
     </div>
   );
