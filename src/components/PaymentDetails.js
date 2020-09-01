@@ -32,7 +32,7 @@ export default function PaymentDetails() {
   };
 
   //kind of a hacky way to mimic a credit card payment system. Not perfect, but I didn't want to try to figure out a new library
-  //(I had considered it at first and install one) while under time pressure. Not perfect but an adequate mock up.
+  //(I had considered it at first and install one) while under time pressure. Not perfect but an adequate mock up (I hope).
   const handleCardNumber = (event) => {
     if (!/[0-9]/.test(event.target.value) && cardNumber.length === 0) {
       //alert to save time and give some feedback but they are uuuuuugly
